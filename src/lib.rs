@@ -117,7 +117,10 @@ pub fn run(app: impl App) -> Result<()> {
     });
 
     thread::spawn(move || loop {
-        let cmd = cmd_rx.recv().unwrap();
+        let cmd = match cmd_rx.recv() {
+            Ok(cmd) => cmd,
+            Err(_) => return,
+        };
 
         let msg_tx2 = msg_tx2.clone();
         thread::spawn(move || {
@@ -134,7 +137,6 @@ pub fn run(app: impl App) -> Result<()> {
     loop {
         let msg = msg_rx.recv().unwrap();
         if msg.is::<command::QuitMessage>() {
-            drop(cmd_tx);
             break;
         } else if msg.is::<command::BatchMessage>() {
             let batch = msg.downcast::<command::BatchMessage>().unwrap();
