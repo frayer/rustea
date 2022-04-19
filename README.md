@@ -15,7 +15,7 @@ https://user-images.githubusercontent.com/103537080/163859892-3e9364ba-395d-4f4a
 
 ## Installation and Docs
 
-Install by putting `rustea = "0.1.0"` in your `Cargo.toml` dependencies.
+Install by putting `rustea = "0.1.5"` in your `Cargo.toml` dependencies.
 
 Docs can be found on [docs.rs](https://docs.rs/rustea).
 

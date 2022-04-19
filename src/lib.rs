@@ -163,9 +163,7 @@ fn initialize(stdout: &mut Stdout, app: &impl App, cmd_tx: Sender<Command>) -> R
 
     enable_raw_mode()?;
     execute!(stdout, cursor::Hide)?;
-    execute!(stdout, crossterm::event::EnableMouseCapture)?;
-
-    Ok(())
+    execute!(stdout, crossterm::event::EnableMouseCapture)
 }
 
 fn normalized_view(app: &impl App) -> String {
