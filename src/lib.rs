@@ -91,6 +91,13 @@ pub trait App {
     fn view(&self) -> String;
 }
 
+/// Enables mouse capture events on your application.
+///
+/// This is optional as it can cause a spam of your update method.
+pub fn enable_mouse_capture() -> Result<()> {
+    execute!(stdout(), crossterm::event::EnableMouseCapture)
+}
+
 /// Runs your application.
 ///
 /// This will begin listening for keyboard events, and dispatching them to your application.
@@ -162,8 +169,7 @@ fn initialize(stdout: &mut Stdout, app: &impl App, cmd_tx: Sender<Command>) -> R
     }
 
     enable_raw_mode()?;
-    execute!(stdout, cursor::Hide)?;
-    execute!(stdout, crossterm::event::EnableMouseCapture)
+    execute!(stdout, cursor::Hide)
 }
 
 fn normalized_view(app: &impl App) -> String {
