@@ -1,3 +1,9 @@
+# NOTE
+
+This is an attempt to restore the Git repository of the codebase behind the
+[Rustea](https://github.com/lazops/rustea) Rust package. To read the process of
+how this was done, please see [README_addendum](README_addendum.md).
+
 # Rustea
 
 An easy-to-use TUI crate for Rust, based off of the Elm architecture.
