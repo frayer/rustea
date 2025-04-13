@@ -28,10 +28,6 @@ crate.
     commit was `8b7222f8fa38799c77f6c1f960be37670e6efe16` which was version
     `0.1.3` of Rustea.
 
-I have a bit of a nostalgia for terminal based UIs. I grew up with them and
-some of my earliest computer networking experiences were on text based BBS
-systems. Wanting to learn more about the Rust programming language, I decided to
-
 ## Restoration Process
 
 ### Step 1: Forking a base
